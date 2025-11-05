@@ -44,7 +44,7 @@ jobs:
 
           git clone --branch ${{ github.event.inputs.version }} --depth=1 https://github.com/siyuan-note/siyuan.git
           cd siyuan
-          sed -i '34a export GOPROXY=https://mirrors.aliyun.com/goproxy/' Dockerfile
+          sed -i '34a ENV GOPROXY=https://mirrors.aliyun.com/goproxy/' Dockerfile
 
           git apply ${{ github.workspace }}/siyuan-note/patches/siyuan/disable-update.patch
           git apply ${{ github.workspace }}/siyuan-note/patches/siyuan/default-config.patch
